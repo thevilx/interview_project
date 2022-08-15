@@ -17,8 +17,9 @@ class CreateTransactionsTable extends Migration
             $table->id();
 
             $table->string('tag');
+            $table->enum('transaction_type' , ['buyGem' , 'buyWithGem']);
             $table->unsignedInteger('gem_count');
-            $table->unsignedInteger('player_id');
+            $table->unsignedBigInteger('player_id');
             $table->foreign('player_id')->references('id')->on('players')->cascadeOnDelete();
 
             $table->timestamps();

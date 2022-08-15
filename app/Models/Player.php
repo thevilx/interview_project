@@ -16,4 +16,11 @@ class Player extends Model
     public function transactions(){
         return $this->hasMany(Transaction::class);
     }
+
+    public function canPay($gem_count){
+        if ($this->gem_count >= $gem_count)
+            return true;
+
+        return false;
+    }
 }

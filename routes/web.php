@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlayerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('buy-gem' , [PlayerController::class , 'buyGem'])->name('buy-gem');
+Route::post('buy-with-gem' , [PlayerController::class , 'buyWithGem'])->name('buy-with-gem');

@@ -13,6 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
+
+        $user = \App\Models\User::find(1);
+
+        $user->player()->create([
+            'name' => 'John',
+            'gem_count' => 10,
+        ]);
     }
 }

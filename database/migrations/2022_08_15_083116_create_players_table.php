@@ -15,7 +15,7 @@ class CreatePlayersTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->unsignedInteger('gem_count')->default(0);
 
